@@ -62,7 +62,99 @@ function verifMail(mailAverif){
 verifMail("contactgmail.com");
 
 
+//exo 6
 
+//role : additionner deux nombre
+//parametre : deux nombre
+//return : le résultat
+
+function addition(a,b){
+    return a+b;
+}
+let resultat = addition(5,5);
+console.log(resultat);
+
+
+//exo 7
+
+//role : poser une question
+//parametre : la question
+//return : la reponse de l'utilisateur
+
+/*
+function Poserquestion(question){
+ return prompt(question);
+}
+let reponse = Poserquestion("est ce que ça va ?");
+
+console.log(reponse);
+*/
+
+//exo 8
+
+//role : convertir un prix en dollar
+//parametre : le prix a convertir et le taux de change
+//return : le prix convertit
+
+function convertion(prix,taux){
+    return prix * taux;
+}
+
+let resu = convertion(3,1.17);
+
+console.log(`le prix convertit est de ${resu} dollars`);
+
+
+
+//role : demander un prix et un taux de change a l'utilisateur et convertit le prix
+//parametre : 
+//return : prix convertit
+/*
+function convertisseur(){
+
+    //demande le prix a convertir
+    let prix = parseFloat( prompt("quel prix veut tu convertit ?"));
+    //demande le taux
+   let taux = parseFloat(prompt("quel taux ?"));
+    //convertit
+    return prix*taux;
+
+    //retourne le resultat
+}
+let prixConvertit = convertisseur();
+
+alert(`le prix convertit est de ${prixConvertit} dollars`);
+
+*/
+
+
+
+//role : demander des notes et fait une moyenne
+//parametre :
+//return : moyenne
+
+function NoteMoyenne(){
+    
+    //demande note math et convertir la reponse en type number
+    let math = parseFloat(prompt("quelle est ta note de math ?"));
+
+    //demande note français convertir la reponse en type number
+    let francais = parseFloat(prompt("quelle est ta note de français ?"));
+
+    //demande note histoire convertir la reponse en type number
+    let histoire = parseFloat(prompt("quelle est ta note d'histoire ?"));
+
+    //demande note SVT convertir la reponse en type number
+    let SVT = parseFloat(prompt("quelle est ta note de SVT ?"));
+
+    //calcule la moyenne
+    return (math+francais+histoire+SVT)/4;
+    //retourne le resultat
+}
+
+let Nmoyen = NoteMoyenne();
+
+alert(`ta moyenne est de ${Nmoyen}/20`);
 
 
 
