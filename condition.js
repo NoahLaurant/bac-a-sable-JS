@@ -134,10 +134,158 @@ console.log(ticket)
 
 //Exo 1
 
-//role : 
-//parametre :
-//return : 
+//role : faire un feu tricolore
+//parametre : rien
+//return : "je m'arrete", "je freine","je passe" ou "danger : feu déféctueux"
 
 function feuTricolor(){
     
+    //on créer une variable feu et on met en valeur le mot "rouge" ou "orange" ou "vert" ou "rien"
+    let feu = prompt("de quelle couleur est le feu");
+    
+    //si le feu est rouge alor "je m'arrête"
+    if(feu==="rouge"){
+        return console.log("Je m'arrête !");
+    } 
+        // sinon si le feu est orange alors "je freine !"
+        else if(feu==="orange"){
+            return console.log("Je freine !");
+    }
+        //sinon si le feu est vert alor "je passe !"
+        else if(feu==="vert"){
+            return console.log("Je passe !");
+        }
+            // sinon "Danger: le feu est déféctueux !"
+            else{
+                return console.log("Danger: le feu est déféctueux !");
+            }
+
 }
+
+let trio = feuTricolor();
+
+console.log(trio);
+
+/*
+//correction
+
+//demander a l'utilisateur de quelle couleur est le feu
+//role : demander a l'utilisateur de quelle couleur est le 
+//parametre : non
+//return: la reponse de l'utisateur ( rouge,vert,orange ou quelque chose d'autre)
+
+function demaderCouleur(){
+let reponseUtlisateur = prompt("de quel couleur est le feu");
+return reponseUtilsateur;
+}
+
+// lui indiquer ce qu'il doit faire
+//role : Afficher une indication de conduite en fonction de la couleur du feu
+//parametre : couleur feu
+//return : rien car elle affiche
+
+function afficherInfoConduite(couleurFeu){
+
+//si la couleur du feu est vert -> je passe
+if(couleurFeu==="vert"){
+    alert("je passe !");
+}
+
+//si la couleur du feu est orange -> je freine
+else if(couleurFeu==="orange"){
+alert("Je freine !");
+}
+
+//si la couleur du feu est rouge -> je m'arrete
+else if(couleurFeu==="rouge"){
+alert("Je m'arrête !");
+}
+
+//si la couleur du feu est autre -> Danger : feu defectueux !
+else {
+    alert("Danger : feu deféctueux");
+    }
+}
+
+//role : apeller demander couleur puis afficher info
+//parametre :
+//return : 
+function lancerFonction(){
+    let couleur = demanderCouleur();
+    afficherInfoConduite(couleur);
+}
+
+lancerFonction();
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+//Exo 2
+
+//calculer une moyenne
+//role : caculer la moyenne générale de lélève
+//parametre : math , français , histoire , svt
+//return : la moyenne de l'élève
+
+function moyennegeneral(math,francais,histoire,svt){
+   let M  = (math+francais+histoire+svt)/4;
+   return M
+}
+
+
+
+
+
+//créer un commentaire
+//role : afficher commentaire
+//parametre : Moyenne générale
+//return : rien
+
+function générercommentaire(M){
+    //si la moyenne est inférieur ou égal a 10 alors afficher "il faut travailler plus"
+    if(M<=10){
+        return "Il faut travailler plus";
+    }
+        //sinon si la moyenne est de 10 a 13 alors afficher "poursuiver vos efforts"
+        else if(M>10 && M<=13){
+            return "Poursuiver vos efforts";
+        }
+
+            //sinon si la moyenne est de 13 a 15 alors afficher "bon travail"
+            else if(M>13 && M<=15){
+                return"Bon travail";
+            }
+
+                //sinon si la moyenne est de 15 a 17 alors afficher "bravo !"
+                else if(M>15 && M<=17){
+                    return"Bravo !";
+                }
+
+                    //sinon "felicitation !"
+                    else{
+                        return"Félicitation !";
+                    }
+
+}
+
+
+
+//editer un bulletin
+//role : afficher bulletin
+//parametre : la moyenne G et le commentaure
+//return :  rien car elle affiche
+
+function Bulletin(commentaire,moyenneG){
+    alert(`la moyenne de l'élèbe est : ${moyenneG} et le commentaire est de ${commentaire}`);
+}
+
+
