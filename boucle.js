@@ -152,7 +152,7 @@ function panier(tabFruit) {
         nbrinconnue++;
     }
     });
-    console.log(`dans le panier il y a : ${nbrpommes} pommes ,${nbrpoires} poires , ${nbrbananes} bananes , ${nbrcerises} cerises`);
+    return`dans le panier il y a : ${nbrpommes} pommes ,${nbrpoires} poires , ${nbrbananes} bananes , ${nbrcerises} cerises`;
    
 }
 
