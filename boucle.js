@@ -8,8 +8,8 @@
 //parametre : nombre
 //return : rien
 function multiplication(nbr) {
-    for (let i= 1; i<=10 ; i++) {
-        console.log(`${nbr}*${i}=${nbr*i}`);
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${nbr}*${i}=${nbr * i}`);
     }
 }
 
@@ -21,12 +21,12 @@ function multiplication(nbr) {
 //parametre : rien
 //return : rien car affiche
 
-function punition(){
+function punition() {
     //créer une boucle qui tournera 50 fois
-    for (let i = 1; i <= 50 ; i++) {
+    for (let i = 1; i <= 50; i++) {
         //ecrit dans la console
         console.log("I will not waste chalk");
-        
+
     }
 }
 
@@ -42,16 +42,16 @@ function epeler(mot) {
     console.log(`le mot ${mot} contient ${mot.length} lettres`);
     for (let i = 0; i < mot.length; i++) {
         console.log(mot.charAt(i));
-        
+
     }
 }
 
 
 //créer un tableau "panierFruits" contenant 6 fruit
 
-let panierFruits = ["fraise" , "poire" , "pomme" , "banane", "pastèque", "kiwi"]
+let panierFruits = ["fraise", "poire", "pomme", "banane", "pastèque", "kiwi"]
 
-console.log(`le premier fruit du panier est ${panierFruits[0]} et le dernier est ${panierFruits[panierFruits.length-1]}`);
+console.log(`le premier fruit du panier est ${panierFruits[0]} et le dernier est ${panierFruits[panierFruits.length - 1]}`);
 
 panierFruits.push("mangue");
 console.log(panierFruits);
@@ -62,7 +62,7 @@ console.log(panierFruits);
 panierFruits.shift();
 console.log(panierFruits);
 
-for(let i = 0 ; i < panierFruits.length ; i++){
+for (let i = 0; i < panierFruits.length; i++) {
     console.log(panierFruits[i]);
 }
 
@@ -76,7 +76,7 @@ panierFruits.forEach(fruit => {
 
 //Exo 2
 
-const tableauNotes = [12,9,15,17,10]
+const tableauNotes = [12, 9, 15, 17, 10]
 
 //role : calculer moyenne a partir d'un tableau de note
 //parametre : notes
@@ -84,19 +84,19 @@ const tableauNotes = [12,9,15,17,10]
 
 //créer une fonction
 function moyenne(tableNote) {
-    let somme=0;
-//récuperer les notes une par une dans le tableau
-tableauNotes.forEach(note => {
-    console.log(note)
-//quand il en a une, il l'aditionne dnas une variable (a l'origine une variable vide)
-somme = somme + note;
+    let somme = 0;
+    //récuperer les notes une par une dans le tableau
+    tableauNotes.forEach(note => {
+        console.log(note)
+        //quand il en a une, il l'aditionne dnas une variable (a l'origine une variable vide)
+        somme = somme + note;
 
-});
-//on divise la somme obtenu par le nbr de valeur dans le tableau c à d la longueur du tableau
-let moyenne = somme/tableauNotes.length;
+    });
+    //on divise la somme obtenu par le nbr de valeur dans le tableau c à d la longueur du tableau
+    let moyenne = somme / tableauNotes.length;
 
-//retourner le résultat
-return moyenne
+    //retourner le résultat
+    return moyenne
 
 }
 
@@ -104,7 +104,7 @@ return moyenne
 //parametre : du resultat
 //return : rien car affiche
 
-function afficheMoyenne(moyenne){
+function afficheMoyenne(moyenne) {
     console.log(`la moyenne de l'elève est : ${moyenne}`);
 }
 
@@ -115,8 +115,8 @@ afficheMoyenne(moyenneEleve);
 //Exo 2
 
 // mon tableau représentant mon panier de fruits 
-let tabfruit = ["cerises", "pommes", "cerises", "pommes", "poires", "bananes", 
-"pommes", "poires", "cerises"];
+let tabfruit = ["cerises", "pommes", "cerises", "pommes", "poires", "bananes",
+    "pommes", "poires", "cerises"];
 
 //role : écrire le nbr de fruit qui a 
 //parametre : fruit
@@ -129,39 +129,130 @@ function panier(tabFruit) {
     let nbrpoires = 0;
     let nbrbananes = 0;
     let nbrinconnue = 0;
-    
+
     //récupérer les fruit dzans le tableau
     tabfruit.forEach(fruit => {
         //si pommes alor mettre avec les pommes
-    if (fruit==="pommes") {
-        nbrpommes++;
-    }
-    //si poire alors mettre avec les poires
-    else if(fruit==="poires"){
-        nbrpoires++;
-    }
-    //si cerises mettre avec les cerises
-    else if(fruit==="cerises"){
-        nbrcerises++;
-    }
-    //sinon mettre banane avec bananes
-    else if (fruit==="bananes"){
-        nbrbananes++;
-    }
-    else{
-        nbrinconnue++;
-    }
+        if (fruit === "pommes") {
+            nbrpommes++;
+        }
+        //si poire alors mettre avec les poires
+        else if (fruit === "poires") {
+            nbrpoires++;
+        }
+        //si cerises mettre avec les cerises
+        else if (fruit === "cerises") {
+            nbrcerises++;
+        }
+        //sinon mettre banane avec bananes
+        else if (fruit === "bananes") {
+            nbrbananes++;
+        }
+        else {
+            nbrinconnue++;
+        }
     });
-    return`dans le panier il y a : ${nbrpommes} pommes ,${nbrpoires} poires , ${nbrbananes} bananes , ${nbrcerises} cerises`;
-   
+    return `dans le panier il y a : ${nbrpommes} pommes ,${nbrpoires} poires , ${nbrbananes} bananes , ${nbrcerises} cerises`;
+
 }
 
 
 
 //Exo 4 : Cesar
 
-//role : remplacer les lettre par celle qui l'eux suivent dans l'alphabet
-//parametre : la phrase
-//return : le code
 
-//fonction pour fair le code
+//role : encoder un message
+//parametre : le mot a encoder
+//return : lot chiffré
+
+//fonction pour faire le code
+
+function codeCesar(motAencoder) {
+
+    //un alphabet
+    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    let motEncode = "";
+
+    //récupérer les lettres du mot une par une
+    for (let i = 0; i < motAencoder.length; i++) {
+
+        let lettreEncode = "";
+        //on stocke le charactère a la position i du mot
+        let lettreActuelle = motAencoder.charAt(i);
+        console.log(lettreActuelle);
+
+        if (lettreActuelle === "z") {
+            lettreEncode = "a";
+        }
+        else {
+
+            //quand il aura récupérer une lettre il chercher la position de cette lettre dans l'alphabet -> stock dna une variable posLettreActuelle
+            let posLettreActuelle = alphabet.indexOf(lettreActuelle);
+            console.log(posLettreActuelle);
+
+            //va cherche la lettre a la position suivante
+            lettreEncode = alphabet[posLettreActuelle + 1]
+            console.log(lettreEncode)
+            //stock dans une variable pour recomposer le mot encoder
+
+        }
+        motEncode = motEncode + lettreEncode;
+    }
+
+
+    //return le mot encodé
+    return motEncode;
+    console.log(motEncode)
+
+}
+
+
+//role : afficher le mot encoder
+//parametre : mot encoder
+//return : rien
+
+function AficheDansBody(trucAafficher) {
+    document.querySelector("body").innerHTML += `<p> ${trucAafficher} </p>`
+
+}
+
+function scenariO(motAencoder) {
+    let motEncode = codeCesar(motAencoder);
+    AficheDansBody(motEncode)
+}
+
+
+
+
+
+
+//Exo 5: jackpot
+
+//créer une fonction
+//role : choisir 3 emojis
+//parametre : tableau avec tous les emojis possibles (entre 3 et 5)
+//return : les 3 emojis sélectionner
+
+function emojiAlea(tableauEmoji){
+
+    //créer un tableau d'emoji
+
+    //tirer 3 chiffre aleatoirement ->Math.floor(Math.random()*3)
+
+    //attribuer un emoji a chaque chiffre tiré -> si on tire 0 on va chercher l'emoji a la position 0 dans le tableau
+
+    //stocker mes emojis dans une boite -> je reconstruit un tableau avec les emoji piochés
+
+    //retourner les emojis pioché
+
+}
+
+//role : comparer les emojis pour définir si victoire
+//parametre : les emojis piochés -> un tableau
+//return : true/false -> boolean
+
+
+//role : afficher le resultat dna sle body
+//parametre : les emojis pioché , et le résultat
+//return : rien car elle affiche
+
