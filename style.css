@@ -26,3 +26,21 @@
 .txt-center{
     text-align: center;
 }
+
+.bleu{
+    color: blue;
+}
+
+.none{
+    display: none;
+}
+
+.border{
+    border: 5px solid aqua;
+    width: 100px;
+    height: 100px;
+}
+
+.remplir{
+    background-color: aqua;
+}
