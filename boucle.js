@@ -7,6 +7,7 @@
 //role : afficher une table de multiplication
 //parametre : nombre
 //return : rien
+/*
 function multiplication(nbr) {
     for (let i = 1; i <= 10; i++) {
         console.log(`${nbr}*${i}=${nbr * i}`);
@@ -222,7 +223,7 @@ function scenariO(motAencoder) {
 }
 
 
-
+*/
 
 
 
@@ -256,3 +257,105 @@ function emojiAlea(tableauEmoji){
 //parametre : les emojis pioché , et le résultat
 //return : rien car elle affiche
 
+/*
+Créer une machine à Jackpot qui affiche 4 emojis. 
+Si les emojis sont identiques : Afficher  `jackpot !` 
+Sinon, afficher `perdu !`
+Indice : il faudra utiliser `Math.floor` et `Math.random`
+*/
+
+// créer une fonction 
+// role : choisir 3 emojis
+//parametre : tableau avec tous les emojis possibles (entre 3 et 5)
+//return : les 3 emojis selectionné 
+
+//créer le tableau d'emoji 
+let emojisArray = ["🦊", "🐺", "🦁", "🐶", "🐻‍❄️"]
+
+function emojiAlea(tableauEmojis) {
+
+    let emojisPioche = []
+
+    //va répéter le code 3 fois (tant que i est inférieur a 3)
+    for (let i = 0; i < 3; i++) {
+
+        //tirer 1 chiffre aleatoirement Math.floor(Math.random()*3)
+        let chiffreAleatoire = Math.floor(Math.random() * tableauEmojis.length)
+
+        //attribuer un emoji a chaque chiffre tiré -> si on tire 0 on va charcher l'emoji a la position 0 dans le tableau 
+        let emojiPioche = tableauEmojis[chiffreAleatoire];
+
+        //stocker mes emojis dans une boite -> je reconstruit un tableau avec les emoji piochés
+        emojisPioche.push(emojiPioche)
+
+    }
+    //retourner les emojis pioché
+    return emojisPioche;
+}
+
+//role : comparer les emojis pour définir si victoire 
+//parametre : les emojis piochés -> un tableau
+//return : true/false -> boolean
+function comparerEmojisPioche(emojisPioche) {
+
+
+    // si le premier emojis du tableau est identique au deuxieme ET le deuxieme au troisieme ET le premier au troisieme alors il sont tous identique -> victoire (true)
+    if (emojisPioche[0] === emojisPioche[1] && emojisPioche[1] === emojisPioche[2] && emojisPioche[0] === emojisPioche[2]) {
+        return true;
+    }
+    // sinon, défaite (false)
+    else {
+        return false;
+    }
+}
+
+//role : afficher la resultat dans le body 
+//parametre : les emojis pioché, et le résultat
+//return : rien car elle affiche
+function afficherResultat(emojisPioche, resultat) {
+
+    if (resultat === true) {
+        ajouterAuBody(`
+        <div> 
+            <p> Votre pioche. : </p>
+            <span>${emojisPioche[0]}</span>
+            <span>${emojisPioche[1]} </span>
+            <span>${emojisPioche[2]}</span>
+
+            <p> Victoire ! </p>
+        </div>   
+        `) 
+    }
+    else {
+        ajouterAuBody(`
+        <div> 
+            <p> Votre pioche. : </p>
+            <span>${emojisPioche[0]}</span>
+            <span>${emojisPioche[1]} </span>
+            <span>${emojisPioche[2]}</span>
+
+            <p> Dommage, retente ta chance ! </p>
+        </div>   
+        `) 
+    }
+
+
+}
+
+
+//role : Ajouter des élements au body
+//parametre : ce qu'il faut afficher 
+//return : rien car elle affiche dans le body
+function ajouterAuBody(trucAafficher) {
+
+    document.querySelector("body").innerHTML += trucAafficher
+
+}
+
+function scenario(tableauEmojis){
+    let emojisPioches = emojiAlea(tableauEmojis);
+    let conclusionResultat = comparerEmojisPioche(emojisPioches);
+    afficherResultat(emojisPioches, conclusionResultat)
+}
+
+scenario(emojisArray)
